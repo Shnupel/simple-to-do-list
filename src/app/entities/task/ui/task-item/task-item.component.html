@@ -1,0 +1,17 @@
+<div class="taskItem">
+  <span title="{{ taskInformation?.title }}">{{ taskInformation?.title }}</span>
+  <button (click)="deleteTask()" matButton>Удалить</button>
+  <button matButton><a routerLink="/tasks/{{ taskInformation?.id }}">подробнее</a></button>
+  <mat-form-field class="select">
+    <select
+      (ngModelChange)="statusChange($event)"
+      [(ngModel)]="taskStatus"
+      matNativeControl
+      required
+    >
+      <option class="selectItem" value="inProcess">в процессе</option>
+      <option class="selectItem" value="notCompleted">не выполнена</option>
+      <option class="selectItem" value="completed">выполнена</option>
+    </select>
+  </mat-form-field>
+</div>

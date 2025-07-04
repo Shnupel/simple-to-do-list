@@ -1,0 +1,18 @@
+<mat-accordion>
+  <mat-expansion-panel hideToggle>
+  </mat-expansion-panel>
+  <mat-expansion-panel [expanded]="panelOpenState()" (opened)="panelOpenState.set(true)" (closed)="panelOpenState.set(false)">
+    <mat-expansion-panel-header>
+      <mat-panel-description>
+        Создать новую задачу
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+    <app-create-task-form [formSubmitHandler]="formSubmit" />
+  </mat-expansion-panel>
+</mat-accordion>
+
+<mat-list>
+  <mat-list-item *ngFor="let task of tasks$ | async">
+    <app-task-item  [taskInformation]="task" (deleteTaskEmitter)="handleDeleteTask($event)" (changeTaskEmitter)="handleChangeTask($event)"/>
+  </mat-list-item>
+</mat-list>
