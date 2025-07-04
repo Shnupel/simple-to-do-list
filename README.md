@@ -1,6 +1,20 @@
-# Frontend
+# Todo list
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.0.5.
+
+## Project installation and start
+
+1) install Angular CLI
+2) cloning repo in directory
+3) in this directory write:
+```bash
+npm install
+```
+4) when in this working directory write:
+```bash
+ng serve
+```
+5) when in http://localhost:4200 project will work
 
 ## Development server
 
